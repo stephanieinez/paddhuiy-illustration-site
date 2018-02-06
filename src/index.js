@@ -4,23 +4,24 @@ import { render } from 'react-dom';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import contentfulClient from './registerContentful';
+
 const target = document.querySelector('#root');
 contentfulClient
   .getEntries()
-  .then(entries => {
-    entries.items.forEach(function(entry) {
+  .then((entries) => {
+    entries.items.forEach((entry) => {
       if (entry) {
         console.log(entry);
       }
     });
   })
-  .catch(error => {
+  .catch((error) => {
     console.log(error);
   });
 render(
   // <ConnectedRouter>
   <App />,
   // </ConnectedRouter>,
-  target
+  target,
 );
 registerServiceWorker();

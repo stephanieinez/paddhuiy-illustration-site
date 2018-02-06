@@ -1,8 +1,8 @@
 import { createClient } from 'contentful';
 // singelton pattern
-const client = createClient({
-  space: 'CONTENTFUL_SPACE',
-  accessToken: 'CONTENTFUL_ACCESSTOKEN',
+const contentfulClient = createClient({
+  space: process.env.REACT_APP_CONTENTFUL_SPACE,
+  accessToken: process.env.REACT_APP_CONTENTFUL_ACCESS_TOKEN,
 });
 
-export default client;
+export default contentfulClient;

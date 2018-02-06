@@ -12,27 +12,23 @@ import Contact from './containers/Contact';
 import Illustrations from './containers/Illustrations';
 import Blog from './containers/Blog';
 
-class App extends Component {
-  render() {
-    return (
-      <div>
-        <BrowserRouter>
-          <div className="page-container">
-            <Header />
-            <Switch>
-              <Route exact path={ROOT} component={Home} />
-              <Route path={ABOUT} component={About} />
-              <Route path={CONTACT} component={Contact} />
-              <Route path={ILLUSTRATIONS} component={Illustrations} />
-              <Route path={BLOG} component={Blog} />
-              {/* <Route component={NotFound} />{' '} */}
-            </Switch>
-            <Footer />
-          </div>
-        </BrowserRouter>
+const App = () => (
+  <div>
+    <BrowserRouter>
+      <div className="page-container">
+        <Header />
+        <Switch>
+          <Route exact path={ROOT} component={Home} />
+          <Route path={ABOUT} component={About} />
+          <Route path={CONTACT} component={Contact} />
+          <Route path={ILLUSTRATIONS} component={Illustrations} />
+          <Route path={BLOG} component={Blog} />
+          {/* <Route component={NotFound} />{' '} */}
+        </Switch>
+        <Footer />
       </div>
-    );
-  }
-}
+    </BrowserRouter>
+  </div>
+);
 
 export default App;
