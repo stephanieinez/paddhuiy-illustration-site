@@ -1,0 +1,22 @@
+{
+  "name": "paddys-site",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "contentful": "^5.1.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-icons": "^2.2.7",
+    "react-responsive-navbar": "^1.0.11",
+    "react-router-dom": "^4.2.2",
+    "react-router-redux": "^5.0.0-alpha.9",
+    "react-scripts": "1.0.17",
+    "styled-components": "^2.3.3"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}

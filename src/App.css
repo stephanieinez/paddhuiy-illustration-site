@@ -1,0 +1,40 @@
+@font-face {
+  font-family: 'Super-Effective';
+  src: url('/custom-fonts/super_effective/super_effective.eot'),
+    url('/custom-fonts/super_effective/super_effective.eot?#iefix')
+      format('embedded-opentype'),
+    url('/custom-fonts/super_effective/super_effective.woff2') format('woff2'),
+    url('/custom-fonts/super_effective/super_effective.woff') format('woff'),
+    url('/custom-fonts/super_effective/super_effective.ttf') format('truetype'),
+    url('/custom-fonts/super_effective/super_effective.svg#Super-Effective')
+      format('svg');
+}
+
+body {
+  font-family: 'Bitstream Vera Sans Mono', Consolas, Courier, monospace;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  padding: 0;
+}
+
+.page-container {
+  height: 100%;
+  position: relative;
+  padding-bottom: 160px;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+strong,
+a {
+  color: #ff3c77;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
