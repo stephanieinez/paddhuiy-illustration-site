@@ -22,19 +22,11 @@ class ContactForm extends Component {
   };
   render() {
     const { email, message } = this.state;
+    const { content, image } = this.props;
     return (
       <div className="contact-container">
         <div className="contact-form-container">
-          <p>
-            Hi! my name's Paddhuiy. I'm a freelance illustrator based in{' '}
-            <strong>Dublin, Ireland</strong>. I make illustrations using a{' '}
-            <strong>clean, descriptive line and simple, flat colours</strong>. I
-            take elements from<strong> comics,</strong> animation and{' '}
-            <strong>fashion illustration </strong> to make drawings that are{' '}
-            <strong> stylish, witty, fun </strong>
-            and <strong> irreverent</strong> without being facetious or
-            tasteless.
-          </p>
+          <p>{content}</p>
           <form>
             <div>
               <label htmlFor="contact-email">Email</label>
@@ -81,7 +73,7 @@ class ContactForm extends Component {
             </div>
           </form>
         </div>
-        <img src="/images/Contact-image.jpg" alt="" className="contact-image" />
+        <img src={image} alt="" className="contact-image" />
       </div>
     );
   }

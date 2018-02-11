@@ -63,7 +63,8 @@ class App extends Component {
             <Header />
             <Switch>
               <Route
-                exactpath={ROOT}
+                exact
+                path={ROOT}
                 component={() => (
                   <LoadingWrapper
                     loading={loading}
@@ -75,10 +76,63 @@ class App extends Component {
                   />
                 )}
               />
-              <Route path={ABOUT} component={About} />
-              <Route path={CONTACT} component={Contact} />
-              <Route path={ILLUSTRATIONS} component={Illustrations} />
-              <Route path={BLOG} component={Blog} />
+              <Route
+                path={ABOUT}
+                component={() => (
+                  <LoadingWrapper
+                    loading={loading}
+                    renderContent={() => (
+                      <About
+                        aboutContent={this.state.about.aboutContent}
+                        aboutImage={this.state.about.aboutImage.fields.file.url}
+                      />
+                    )}
+                  />
+                )}
+              />
+              <Route
+                path={CONTACT}
+                component={() => (
+                  <LoadingWrapper
+                    loading={loading}
+                    renderContent={() => (
+                      <Contact
+                        contactContent={this.state.contact.contactContent}
+                        contactImage={
+                          this.state.contact.contactImage.fields.file.url
+                        }
+                      />
+                    )}
+                  />
+                )}
+              />
+              <Route
+                path={ILLUSTRATIONS}
+                component={() => (
+                  <LoadingWrapper
+                    loading={loading}
+                    renderContent={() => (
+                      <Illustrations
+                        galleryImages={this.state.gallery.images}
+                      />
+                    )}
+                  />
+                )}
+              />
+              <Route
+                path={BLOG}
+                component={() => (
+                  <LoadingWrapper
+                    loading={loading}
+                    renderContent={() => (
+                      <Blog
+                        blogContent={this.state.blog.blogContent}
+                        blogImage={this.state.blog.blogImage.fields.file.url}
+                      />
+                    )}
+                  />
+                )}
+              />
               {/* <Route component={NotFound} />{' '} */}
             </Switch>
             <Footer />

@@ -2,9 +2,16 @@ import React from 'react';
 import { galleryItems } from './constants';
 import './gallery.css';
 
-const Gallery = ({ items }) => (
+const Gallery = ({ galleryImages }) => (
   <div className="gallery-container">
-    {items.map(item => <img src={item.src} alt="" className="gallery-image" />)}
+    {galleryImages.map(image => (
+      <img
+        src={image.fields.file.url}
+        alt=""
+        key={image.sys.id}
+        className="gallery-image"
+      />
+    ))}
   </div>
 );
 

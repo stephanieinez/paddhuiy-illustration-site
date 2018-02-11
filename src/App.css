@@ -34,10 +34,10 @@ body {
 
 strong,
 a {
+  font-weight: bold;
   color: #ff3c77;
-  text-decoration: none;
 }
 
 a:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
