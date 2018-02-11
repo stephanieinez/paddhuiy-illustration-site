@@ -1,29 +1,27 @@
 import React, { Component } from 'react';
-// import { Link } from 'react-router-dom';
-// import { FaBars, FaClose } from 'react-icons/lib/fa';
 import './contact-form.css';
 
 class ContactForm extends Component {
   state = {
     email: '',
     message: '',
-    emailError: ''
+    emailError: '',
   };
 
   handleInputChange = id => event =>
     this.setState({ [id]: event.target.value });
 
-  handleSubmit = event => {
+  handleSubmit = (event) => {
     event.preventDefault();
     if (!this.state.email) {
       return this.setState({
-        emailError: 'Please enter your email address'
+        emailError: 'Please enter your email address',
       });
     }
     return this.setState({ emailError: '' }, this.props.submitForm(this.state));
   };
   render() {
-    const { name, email, message } = this.state;
+    const { email, message } = this.state;
     return (
       <div className="contact-container">
         <div className="contact-form-container">
@@ -83,7 +81,7 @@ class ContactForm extends Component {
             </div>
           </form>
         </div>
-        <img src="/images/Contact-image.jpg" className="contact-image" />
+        <img src="/images/Contact-image.jpg" alt="" className="contact-image" />
       </div>
     );
   }

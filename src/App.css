@@ -21,9 +21,9 @@ body {
 }
 
 .page-container {
-  height: 100%;
+  min-height: 550px;
   position: relative;
-  padding-bottom: 160px;
+  padding-bottom: 170px;
 }
 
 *,
