@@ -3,17 +3,17 @@ import './footer.css';
 
 const Footer = () => (
   <div className="footer-container">
-    <a href="">
+    <a href="http://paddhuiy.tumblr.com/">
+      <img src="/images/TumblrBadge.png" alt="Tumblr" className="social-icon" />
+    </a>
+    <a href="https://twitter.com/paddhuiy">
       <img
-        src="/images/InstaBadge.png"
-        alt="Facebook"
+        src="/images/TwitterBadge.png"
+        alt="Twitter"
         className="social-icon"
       />
     </a>
-    <a href="">
-      <img src="/images/InstaBadge.png" alt="Twitter" className="social-icon" />
-    </a>
-    <a href="">
+    <a href="https://www.instagram.com/paddhuiy/">
       <img
         src="/images/InstaBadge.png"
         alt="Instagram"

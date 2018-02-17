@@ -26,7 +26,8 @@
   font-size: 22px;
   padding: 10px;
 }
-.navbar a:hover {
+.navbar a:hover,
+.navbar a:active {
   background-color: #ff3c77;
   color: white;
   text-decoration: none;

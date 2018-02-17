@@ -13,11 +13,6 @@ import Contact from './containers/Contact';
 import Illustrations from './containers/Illustrations';
 import Blog from './containers/Blog';
 
-/**
-TODO: N02
-Render each page with their props.
-* */
-
 class App extends Component {
   constructor() {
     super();
@@ -44,7 +39,7 @@ class App extends Component {
           }
         });
         // set loading to false, since we know the request is finished
-        // populate state with apiResult using spread operator TODO Study spread operator
+        // populate state with apiResult using spread operator
         this.setState({ loading: false, ...apiResult });
       })
       .catch((error) => {
@@ -55,7 +50,6 @@ class App extends Component {
   }
   render() {
     const { loading } = this.state;
-    console.log('app', this.state);
     return (
       <div>
         <BrowserRouter>
@@ -65,11 +59,12 @@ class App extends Component {
               <Route
                 exact
                 path={ROOT}
-                component={() => (
+                render={reactRouterProps => (
                   <LoadingWrapper
                     loading={loading}
                     renderContent={() => (
                       <Home
+                        {...reactRouterProps}
                         homeImage={this.state.home.homeImage.fields.file.url} // get the props from the API and pass down to component
                       />
                     )}
@@ -78,11 +73,12 @@ class App extends Component {
               />
               <Route
                 path={ABOUT}
-                component={() => (
+                render={reactRouterProps => (
                   <LoadingWrapper
                     loading={loading}
                     renderContent={() => (
                       <About
+                        {...reactRouterProps}
                         aboutContent={this.state.about.aboutContent}
                         aboutImage={this.state.about.aboutImage.fields.file.url}
                       />
@@ -92,11 +88,12 @@ class App extends Component {
               />
               <Route
                 path={CONTACT}
-                component={() => (
+                render={reactRouterProps => (
                   <LoadingWrapper
                     loading={loading}
                     renderContent={() => (
                       <Contact
+                        {...reactRouterProps}
                         contactContent={this.state.contact.contactContent}
                         contactImage={
                           this.state.contact.contactImage.fields.file.url
@@ -108,11 +105,12 @@ class App extends Component {
               />
               <Route
                 path={ILLUSTRATIONS}
-                component={() => (
+                render={reactRouterProps => (
                   <LoadingWrapper
                     loading={loading}
                     renderContent={() => (
                       <Illustrations
+                        {...reactRouterProps}
                         galleryImages={this.state.gallery.images}
                       />
                     )}
@@ -121,11 +119,12 @@ class App extends Component {
               />
               <Route
                 path={BLOG}
-                component={() => (
+                render={reactRouterProps => (
                   <LoadingWrapper
                     loading={loading}
                     renderContent={() => (
                       <Blog
+                        {...reactRouterProps}
                         blogContent={this.state.blog.blogContent}
                         blogImage={this.state.blog.blogImage.fields.file.url}
                       />
