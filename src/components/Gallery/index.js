@@ -1,26 +1,24 @@
 import React from 'react';
-import { galleryItems } from './constants';
+import PropTypes from 'prop-types';
 import './gallery.css';
-
-// onClick is a native event and can only be used on actual HTML tags
-// https://reactjs.org/docs/handling-events.html & synthetic events
 
 const Gallery = ({ galleryImages, onClick }) => (
   <div className="gallery-container">
-    {galleryImages.map(image => (
+    {galleryImages.map((image, index) => (
       <img // eslint-disable-line
         src={image.fields.file.url}
-        alt=""
+        alt="Gallery image"
         key={image.sys.id}
         className="gallery-image"
-        onClick={onClick(image.fields.file.url)}
+        onClick={onClick(image.fields.file.url, index)}
       />
     ))}
   </div>
 );
 
-Gallery.defaultProps = {
-  items: galleryItems,
+Gallery.propTypes = {
+  galleryImages: PropTypes.array.isRequired, //eslint-disable-line
+  onClick: PropTypes.func.isRequired,
 };
 
 export default Gallery;

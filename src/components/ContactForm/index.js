@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import marked from 'marked';
 import './contact-form.css';
 
 class ContactForm extends Component {
@@ -20,13 +21,15 @@ class ContactForm extends Component {
     }
     return this.setState({ emailError: '' }, this.props.submitForm(this.state));
   };
+
   render() {
     const { email, message } = this.state;
     const { content, image } = this.props;
+    const body = marked(content);
     return (
       <div className="contact-container">
         <div className="contact-form-container">
-          <p>{content}</p>
+          <div dangerouslySetInnerHTML={{ __html: body }} />
           <form>
             <div>
               <label htmlFor="contact-email">Email</label>
@@ -65,7 +68,7 @@ class ContactForm extends Component {
                 </div>
               ) : null}
               {this.props.mailError ? (
-                <div> {this.props.mailError} </div>
+                <div> Your message failed to send. Please try again. </div>
               ) : null}
               {this.props.loadingMail ? (
                 <div className="mail-sending">...sending</div>

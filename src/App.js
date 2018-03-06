@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import contentfulClient from './registerContentful';
 
 import { ROOT, ABOUT, CONTACT, ILLUSTRATIONS, BLOG } from './routes';
-import { Header, Footer, LoadingWrapper } from './components';
+import { Header, Footer, LoadingWrapper, NotFound } from './components';
 
 import './App.css';
 
@@ -132,7 +132,7 @@ class App extends Component {
                   />
                 )}
               />
-              {/* <Route component={NotFound} />{' '} */}
+              <Route component={NotFound} />
             </Switch>
             <Footer />
           </div>

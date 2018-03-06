@@ -36,16 +36,30 @@
 
 .modal-arrow-right {
   position: absolute;
-  width: 35px;
-  top: 160px;
-  right: 0;
+  width: 50px;
+  top: 45%;
+  right: -15px;
   cursor: pointer;
 }
 
 .modal-arrow-left {
   position: absolute;
-  width: 35px;
-  top: 160px;
-  left: 0;
+  width: 50px;
+  top: 45%;
+  left: -15px;
   cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .modal-image {
+    max-width: 80%;
+  }
+  .modal-arrow-right {
+    width: 40px;
+    right: 0;
+  }
+  .modal-arrow-left {
+    width: 40px;
+    left: 0;
+  }
 }

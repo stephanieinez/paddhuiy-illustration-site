@@ -13,5 +13,7 @@ const LoadingWrapper = ({ loading, renderContent }) =>
 
 LoadingWrapper.propTypes = {
   loading: PropTypes.bool.isRequired,
+  renderContent: PropTypes.func.isRequired,
 };
+
 export default LoadingWrapper;
