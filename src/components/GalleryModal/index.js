@@ -5,10 +5,9 @@ import './galleryModal.css';
 
 const GalleryModal = ({ onClick, image, nextImage, previousImage }) => (
   <div className="overlay">
-    <div className="modal-container">
-      <img src={image} alt="" className="modal-image" />
+    <div style={{ backgroundImage: `url(${image})` }} className="modal-image">
       <FaClose
-        size={30}
+        size={40}
         color="#ff3c77"
         className="close-modal"
         onClick={onClick}

@@ -5,10 +5,12 @@ import './gallery.css';
 const Gallery = ({ galleryImages, onClick }) => (
   <div className="gallery-container">
     {galleryImages.map((image, index) => (
-      <img // eslint-disable-line
-        src={image.fields.file.url}
+      <div
+        style={{ backgroundImage: `url(${image.fields.file.url})` }}
         alt="Gallery image"
         key={image.sys.id}
+        role="link"
+        tabIndex={0}
         className="gallery-image"
         onClick={onClick(image.fields.file.url, index)}
       />

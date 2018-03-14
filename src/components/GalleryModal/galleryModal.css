@@ -1,14 +1,11 @@
 .modal-image {
-  max-width: 800px;
-  position: relative;
   padding: 2rem;
-  background: #ffffff;
-  background-clip: padding-box;
   box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.25);
-}
-
-.modal-container {
-  position: relative;
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 80%;
+  width: 80%;
+  background-position: center;
 }
 
 .overlay {
@@ -29,8 +26,8 @@
 
 .close-modal {
   position: absolute;
-  top: 2px;
-  right: 2px;
+  top: 20px;
+  right: 20px;
   cursor: pointer;
 }
 
@@ -38,7 +35,7 @@
   position: absolute;
   width: 50px;
   top: 45%;
-  right: -15px;
+  right: 15px;
   cursor: pointer;
 }
 
@@ -46,14 +43,11 @@
   position: absolute;
   width: 50px;
   top: 45%;
-  left: -15px;
+  left: 15px;
   cursor: pointer;
 }
 
-@media (max-width: 900px) {
-  .modal-image {
-    max-width: 80%;
-  }
+@media (max-width: 400px) {
   .modal-arrow-right {
     width: 40px;
     right: 0;
