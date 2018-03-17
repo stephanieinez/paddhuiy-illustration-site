@@ -39,10 +39,10 @@ if (cluster.isMaster) {
   app.post('/api/email', function(req, res) {
     const emailTemplate = `From: ${req.body.email}\n
     Message: ${req.body.message}`;
+    const mailgunServer = process.env.MAILGUN_SERVER;
     mailgunClient.messages
-      .create('sandboxf46c18bc5915403486c7f4b6b83e21ca.mailgun.org', {
-        from:
-          'Paddhuiy Illustration <mailgun@sandboxf46c18bc5915403486c7f4b6b83e21ca.mailgun.org>',
+      .create(mailgunServer, {
+        from: `Paddhuiy Illustration <mailgun@${mailgunServer}>`,
         to: ['stephanie.tassone@gmail.com'],
         subject: `New message via your website from: ${req.body.email}`,
         text: emailTemplate
