@@ -1,0 +1,16 @@
+.home-banner-container {
+  display: flex;
+  align-items: center;
+  padding: 0 60px;
+  min-height: 380px;
+}
+
+.home-banner {
+  width: 100%;
+}
+
+@media (max-width: 900px) {
+  .home-banner-container {
+    padding: 0;
+  }
+}

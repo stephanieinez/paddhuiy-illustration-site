@@ -1,0 +1,59 @@
+.modal-image {
+  padding: 2rem;
+  box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.25);
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 80%;
+  width: 80%;
+  background-position: center;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 1000;
+  padding: 1.2rem;
+}
+
+.close-modal {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.modal-arrow-right {
+  position: absolute;
+  width: 50px;
+  top: 45%;
+  right: 15px;
+  cursor: pointer;
+}
+
+.modal-arrow-left {
+  position: absolute;
+  width: 50px;
+  top: 45%;
+  left: 15px;
+  cursor: pointer;
+}
+
+@media (max-width: 400px) {
+  .modal-arrow-right {
+    width: 40px;
+    right: 0;
+  }
+  .modal-arrow-left {
+    width: 40px;
+    left: 0;
+  }
+}
