@@ -5,6 +5,7 @@ const numCPUs = require('os').cpus().length;
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const mailgunClient = require('./registerMailgun');
+const contentfulClient = require('./registerContentful');
 
 const PORT = process.env.PORT || 5000;
 
@@ -52,9 +53,35 @@ if (cluster.isMaster) {
         res.send('{"message":"Sent!"}');
       }) // logs response data
       .catch(err => {
-        res.send('{"message":"Error!"}');
+        res.status(err.status || 500);
+        res.send({
+          message: err.message,
+          error: err
+        });
         console.log(err);
       }); // logs any error
+  });
+
+  app.get('/api/content', function(req, res) {
+    const apiResult = {};
+    contentfulClient
+      .getEntries()
+      .then(entries => {
+        entries.items.forEach(entry => {
+          if (entry) {
+            apiResult[entry.sys.contentType.sys.id] = entry.fields;
+          }
+        });
+        res.send(apiResult);
+      })
+      .catch(err => {
+        res.status(err.status || 500);
+        res.send({
+          message: err.message,
+          error: err
+        });
+        console.log(err);
+      });
   });
 
   // All remaining requests return the React app, so it can handle routing.

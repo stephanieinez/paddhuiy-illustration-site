@@ -1,6 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { lazyload } from 'react-lazyload';
+
 import './gallery.css';
+
+lazyload({
+  height: 200,
+  once: true,
+  offset: 100,
+});
 
 const Gallery = ({ galleryImages, onClick }) => (
   <div className="gallery-container">

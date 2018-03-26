@@ -7,3 +7,5 @@ export { default as ContactForm } from './ContactForm';
 export { default as LoadingWrapper } from './Loading';
 export { default as GalleryModal } from './GalleryModal';
 export { default as NotFound } from './NotFound';
+export { ErrorBoundaryPageRender } from './ErrorBoundaryPage';
+export { default as ErrorBoundaryPage } from './ErrorBoundaryPage';
