@@ -3,12 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "mailgun.js": "^2.0.1",
     "marked": "^0.3.12",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "react-helmet": "^5.2.0",
     "react-icons": "^2.2.7",
     "react-lazyload": "^2.3.0",
     "react-responsive-navbar": "^1.0.11",
@@ -16,7 +14,8 @@
     "react-router-redux": "^5.0.0-alpha.9",
     "react-scripts": "1.0.17",
     "styled-components": "^2.3.3",
-    "whatwg-fetch": "^2.0.3"
+    "whatwg-fetch": "^2.0.3",
+    "universal-ga": "^1.2.0"
   },
   "devDependencies": {
     "eslint": "^4.12.1",
