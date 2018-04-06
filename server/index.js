@@ -44,7 +44,7 @@ if (cluster.isMaster) {
     mailgunClient.messages
       .create(mailgunServer, {
         from: `Paddhuiy Illustration <mailgun@${mailgunServer}>`,
-        to: ['stephanie.tassone@gmail.com'],
+        to: ['paddhuiy@gmail.com'],
         subject: `New message via your website from: ${req.body.email}`,
         text: emailTemplate
       })
