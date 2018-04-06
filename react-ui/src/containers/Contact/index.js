@@ -19,7 +19,7 @@ class Contact extends Component {
         disableButton: true,
       },
       () => {
-        fetch('http://localhost:5000/api/email', {
+        fetch('/api/email', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

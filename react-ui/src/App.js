@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import 'whatwg-fetch';
-// import { Helmet } from 'react-helmet';
 
 import { ROOT, ABOUT, CONTACT, ILLUSTRATIONS, BLOG } from './routes';
 import {
@@ -30,7 +29,7 @@ class App extends Component {
     };
   }
   componentDidMount() {
-    fetch('http://localhost:5000/api/content')
+    fetch('/api/content')
       .then((response) => {
         if (!response.ok) {
           throw new Error('Error getting content');
