@@ -13,13 +13,13 @@ const GalleryModal = ({ onClick, image, nextImage, previousImage }) => (
         onClick={onClick}
       />
       <img // eslint-disable-line
-        src="/images/Gallery-Arrow-Right.png"
+        src="https://i.imgur.com/mqWpBiF.png"
         alt="Next"
         onClick={nextImage}
         className="modal-arrow-right"
       />
       <img // eslint-disable-line
-        src="/images/Gallery-Arrow-Left.png"
+        src="https://i.imgur.com/37w5Wee.png"
         alt="Previous"
         onClick={previousImage}
         className="modal-arrow-left"
